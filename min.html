@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                //방법1
+                // let min;
+                // if(a<b) min = a;
+                // else min = b;
+                // if(c < min) min = c;
+                // return min;
+
+                //방법2
+                min = a;
+                if(b < min) min = b;
+                if(c < min) min = c;
+                return min;
+            }
+
+            console.log(solution(2, 5, 1));
+        </script>
+    </body>
+</html>

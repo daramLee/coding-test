@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                //강의 듣기 전 코드
+                // let max, answer = "YES";
+                // //가장 긴변 결정
+                // if(a<b) max = b;
+                // else max = a;
+                // if(max < c) max = c;
+                // //삼각형되는지 결정
+                // if(max ==a){
+                //     if(b+c < a){
+                //         answer = "NO";
+                //     }
+                // }
+                // else if(max == b){
+                //     if(a+c < b){
+                //         answer = "NO";
+                //     }
+                // }
+                // else{
+                //     if(a+b < c){
+                //         answer = "NO";
+                //     }
+                // }
+
+                // return answer;
+
+                //강의 듣기 후 코드
+                let answer = "YES", max;
+                if(a<b) max = b;
+                else max = a;
+                if(max < c) max = c;
+
+                sum = a + b + c;
+                if((sum - max) < max) answer = "NO";
+                return answer;
+
+            }
+
+            console.log(solution(13, 33, 17));
+        </script>
+    </body>
+</html>
