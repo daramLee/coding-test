@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                //강의 전 코드-방법1: 홀수찾으면서 최솟값 함께 비교
+                // let sum=0, answer, min= arr[0];
+                // for(let i=0; i<arr.length; i++){
+                //     if(arr[i]%2){
+                //         sum += arr[i];
+                //         if(arr[i]< min){
+                //             min = arr[i];
+                //         }
+                //     }
+                // }
+                // //min함수 쓰면 안되겠지?
+                // answer = sum + '\n' + min;
+                
+                // return answer;
+
+                //강의 전 코드-방법2:홀수인 배열을 따로 생성.
+                // let odd = [];
+                // for(let i=0; i<arr.length;i++){
+                //     if(arr[i]%2){
+                //         odd.push(arr[i]);
+                //     }
+                // }
+                // //홀수 배열에서 최소,합 구하기
+                // let min = odd[0], sum=0, answer=[];
+                // for(let i=0;i<odd.length;i++){
+                //     sum += odd[i];
+                //     if(odd[i]<min){
+                //         min = odd[i];
+                //     } //한줄짜리 문은 { }쓰지말기
+                // }
+                // answer.push(sum);
+                // answer.push(min);
+
+                // return answer;
+
+                // 강의 코드(근데 이거 두줄로 결과값 출력 안되는데?)
+                // let answer=[];
+                // let sum=0, min=1000;
+                // for(let x of arr){
+                //     if(x%2===1){
+                //         sum+=x;
+                //         if(x<min) min=x;
+                //     }
+                // }
+                // answer.push(sum);
+                // answer.push(min);     
+
+                // return answer;
+                
+                //강의 후 코드 : 복습
+                    let answer;
+                    let min = Number.MAX_SAFE_INTEGER;
+                    let sum = 0;
+
+                    for(let i = 0; i < arr.length; i++){
+                        if(arr[i] % 2 === 1){
+                            sum += arr[i];
+                            if(arr[i] < min){
+                                min = arr[i];
+                            }
+                        } 
+                    }
+                    answer = sum + '\n' + min;
+                    
+                    return answer;
+            }
+            arr=[12, 77, 38, 41, 53, 92, 85];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
