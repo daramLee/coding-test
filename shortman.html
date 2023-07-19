@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+           function solution(arr){
+                // //강의 전 코드: 다 더한 다음 100을 빼기
+                // let sum = 0;
+                // arr.forEach(function(v, i) {
+                //     sum += v;
+                // })
+                // let temp = sum - 100;
+                // for(let i = 0; i< arr.length; i++) {
+                //     if(arr[i] < temp) {
+                //         temp -= arr[i];
+
+
+                //         continue;
+                //     }
+                //     if(arr[i] === temp) {
+
+                //     }
+                // }
+
+                // return answer;
+                
+                //강의 전 코드 : 정답 원리만 보고 코드는 직접 구현하려고 시도한 것.
+                let sum = 0;
+                arr.forEach(function(v) {
+                    sum += v;
+                })
+                let flag = 0;
+                for(let i = 0; i < arr.length; i++) {
+                    for(let j = i + 1; j < arr.length - 1; j++) {
+                        if(sum - (arr[i] + arr[j]) === 100) {
+                            console.log(arr[i], arr[j]);
+                            arr.splice(j, 1);
+                            arr.splice(i, 1);
+                            flag = 1;
+                            break;
+                        }                        
+                    }
+                    if(flag === 1) {
+                            break;
+                        }
+                }
+                let answer = arr;
+
+                return answer;
+            }
+
+            let arr=[22, 7, 21, 19, 10, 15, 25, 8, 13];
+            console.log(solution(arr));
+        </script>
+
+    </body>
+</html>
