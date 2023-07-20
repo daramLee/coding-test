@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                // //강의 전 코드 : 이미 생성된 문자열의 일부를 바꿀 수 없음
+                // s.forEach(function(v) {
+                //     if (v === 'A') {
+                //         v = '#';
+                //     }
+                // })
+                // let answer = s;
+
+                // return answer;
+                
+                // //강의 후 코드
+                // let answer = '';
+                // for (let i of s) {
+                //     if(i === 'A') {
+                //         answer += '#';
+                //     } else {
+                //         answer += i;
+                //     }
+                // }
+
+                // return answer;
+
+                //강의 후 코드 2
+                let answer = s;
+                answer = answer.replace(/A/g, '#');
+
+                return answer;
+            }
+            
+            let str="APPLE IS GOOD PINEAPPLE";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

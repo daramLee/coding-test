@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, t){
+                // //강의 전 코드
+                // let count = 0;
+                // for (let x of s) {
+                //     if (x === t) {
+                //         count++;
+                //     }
+                // }
+                // let answer = count;
+               
+                // return answer;
+
+                //강의 후 코드: split 사용
+                let answer = s.split(t).length - 1;
+
+                return answer;
+            }
+            
+            let str="COMPUTERPROGRAMMING";
+            console.log(solution(str, 'R'));
+        </script>
+    </body>
+</html>
