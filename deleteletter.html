@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                // //강의 전 코드 : 한번이라도 나온 알파벳을 배열에 담으려고 함. 근데 실패
+                // let letter = [];
+                // let index = 0;
+                // for (let i = s.length - 1; 0 <= i; i--) {
+                //     let j = -1;
+                //     while (j <= index) {
+                //         if (s[i] !== letter[j]) {
+                //             j++;
+                //             letter[j] = s[i];
+                //         } else {
+                //             s.delete(s[i]);
+                //         }
+                //     }
+                // }
+                // let answer = s;             
+
+                // //강의 후 코드 : indexOf이용하여 풀기
+                // let answer = '';
+                // for (let i = 0; i < s.length; i++) {
+                //     if(s.indexOf(s[i]) === i) {
+                //         answer += s[i];
+                //     }
+                // }
+
+                //특정 문자가 몇번 등장했는지 세는 코드 짜보기
+                let answer = 0;
+                let index = s.indexOf('k');
+                while (index !== -1) {
+                    answer++;
+                    index = s.indexOf('k', index + 1);                                     
+                }
+                //k를 찾아서..
+                //최초로 나온 k의 인덱스를 찾아.
+                //인덱스+1부터해서 다시 찾아.
+                //그 인덱스+1해서 다시 찾아.
+
+                return answer;               
+            }
+            console.log(solution("ksekkset"));
+        </script>
+    </body>
+</html>

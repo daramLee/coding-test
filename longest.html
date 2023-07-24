@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                // //강의 전 코드: max를 문자열로 선언함
+                // let max = '';
+                // for (let i = 0; i < s.length; i++) {
+                //     if (max.length < s[i].length) {
+                //         max = s[i];
+                //     }
+                // }
+                // let answer = max;
+                
+                //강의 후 코드: max를 숫자 변수로 선언함
+                let max = Number.MIN_SAFE_INTEGER;
+                let answer = '';
+                for (let x of s) {
+                    if (max < x.length) {
+                        answer = x;
+                        max = x.length;
+                    }
+                }
+
+                return answer;
+            }
+            let str=["teacher", "time", "student", "beautiful", "good"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

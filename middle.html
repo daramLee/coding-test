@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                // //강의 전 코드
+                // let answer = '';
+                // let middle = (s.length + 1) / 2 - 1;
+                // if (s.length % 2 === 1) {                  
+                //     answer = s[middle];
+                // } else {
+                //     answer += s[Math.floor(middle)];
+                //     answer += s[Math.ceil(middle)];
+                // }
+
+                // //강의 후 코드 1: middle을 몫을 가지도록 바꾸고
+                // //substring함수를 이용함
+                // let answer = '';
+                // let mid = Math.floor(s.length / 2);
+                // if (s.length % 2 === 1) {
+                //     answer = s.substring(mid, mid + 1);
+                // } else {
+                //     answer = s.substring(mid - 1, mid + 1);
+                // }
+
+
+                //강의 후 코드 2: middle을 몫을 가지도록 바꾸고 
+                //substr함수를 이용함
+                let answer = '';
+                let mid = Math.floor(s.length / 2);
+                
+                if (s.length % 2 === 1) {
+                    answer = s.substr(mid, 1);
+                } else {
+                    answer = s.substr(mid - 1, 2);
+                }
+
+
+                return answer;
+            }
+            console.log(solution("study"));
+            
+        </script>
+    </body>
+</html>
