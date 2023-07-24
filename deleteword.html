@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){   
+                // //강의 전 코드: indexOf 이용
+                // let answer = '';
+                // for (let i = 0; i < s.length; i++) {
+                //     if (s.indexOf(s[i]) === i) {
+                //         answer += s[i] + '\n';
+                //     }
+                // }
+
+                //강의 후 코드: filter함수 이용
+                let answer = s.filter(function (v, i){
+                    if (s.indexOf(v) === i) {
+                        return true;
+                    }
+                })
+
+                return answer;
+            }
+            let str=["good", "time", "good", "time", "student"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
