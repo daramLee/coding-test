@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){  
+                // //강의 전 코드 : 요소 여러개를 한번에 값을 변경하려고 함
+                // let rate = [0, ]; //0으로 초기화되었는지 모르겠음
+                // let max = Number.MIN_SAFE_INTEGER;
+
+                // for (let i = 0; i < arr.length; i++) {
+                //     rate[i] = 0;
+                //     if (max < arr[i]) {
+                //         for (let j = i; 0 <= j; j--) {
+                //             rate[j]++;
+                //             console.log(rate[j]);
+                //         }
+                //         max = arr[i];
+                //     } else if (max === arr[i]) {
+                //         //max인 rate는 ++안해도 됨
+
+                //     } else {
+                //         //rate중에서 가장 작은 등수를 할당해야함
+                //     }                    
+                // }
+                // let answer = rate;
+
+                //강의 후 코드: 기준을 하나 잡고 그 요소만 값을 변경함.
+                let num = arr.length;
+                let rate = Array.from({length:num}, () => 1);
+                for (let i = 0; i < arr.length; i++) {  
+                    for (let j = 0; j < arr.length; j++) {
+                        if (arr[i] < arr[j]) {
+                            rate[i]++;
+                        }
+                    }                 
+
+                }
+                let answer = rate;
+                return answer;
+            }
+
+            let arr=[92, 92, 92, 100, 76];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
