@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                // //강의 전 코드
+                // let str = '';
+                // for (let i = s.length - 1; 0 <= i; i--) {
+                //     str += s[i].toUpperCase(); //한번에 toUpperCase하는 방법있었는데 뭐였더라
+                // }
+                
+                // let answer = 'YES';
+                // for (let i = 0; i < s.length; i++) {
+                //     if (s[i].toUpperCase() !== str[i]) {
+                //         answer = 'NO';
+                //         break;
+                //     }
+                // }
+                // //강의 후 코드 1: 대칭으로 문자를 비교
+                // s = s.toUpperCase();
+                // let len = Math.floor(s.length / 2); //6이면 3 5면 2
+                // let answer = 'YES';
+                // for (let i = 0; i < len; i++) {
+                //     if (s[i] !== s[s.length - 1 - i]) {
+                //         answer = 'NO';
+                //     }
+                // }
+                //강의 후 코드 2: reverse 이용하여 s랑 reverse문자열이랑 비교
+                s = s.toLowerCase();
+                let reverse = s.split('').reverse().join('');
+                let answer = 'YES';
+                if (s !== reverse) {
+                    answer = 'NO';
+                }
+                
+                return answer;
+            }
+            
+            let str="gooG";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
