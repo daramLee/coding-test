@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                // //강의 전 코드 : replace이용, 0이 아닌 숫자가 시작하는 index 저장
+                // str = str.replace(/[^0-9]/g, ''); 
+                // let index = 0;
+                // for (let i = 0; parseInt(str[i]) === 0; i++) {
+                //     index++;
+                // }
+
+                // let answer = '';
+                // for (let i = index; i < str.length; i++) {
+                //     answer += str[i];
+                // }
+
+                //강의 후 코드: isNaN함수랑 parseInt함수 이용
+                let answer = '';
+                for (let x of s) {
+                    if (!isNaN(x)) {
+                        answer += x;
+                    }
+                }
+                return parseInt(answer);
+            }
+            
+            let str="g000en2T0s8eSoft";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

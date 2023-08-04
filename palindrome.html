@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                //강의 전 코드: 중간에 문자들을 삭제하려고 하다보니 인덱스가 안맞는 문제를 해결못함.
+                // s = s.toLowerCase();
+                // for (let i = 0; i < s.length; i++) {
+                //     let num = s[i].charCodeAt();
+                //     if (97 <= num && num <= 122) {
+                //         //nothing to do
+                //     } else {
+                //         s.split(i, 1); //전에껀 이렇게 삭제해도 i조정안해도 된거같은데 뭐지                       
+                //         i--;
+                //     }
+                // }
+                // let reverse = s.split('').reverse().join('');
+                // let answer = 'YES';
+                // if (reverse !== s) {
+                //     answer = 'NO';
+                // }
+
+                //강의 후 코드: replace함수를 이용하면 되는 문제였음.
+                //소문자로 바꿔
+                //replace로 알파벳 아닌 문자 다 삭제
+                //reverse랑 s랑 다르면 NO출력
+                let answer = 'YES';
+                s = s.toLowerCase();
+                s = s.replace(/[^a-z]/g, '');
+                let reverse = s.split('').reverse().join('');
+                if (reverse !== s) {
+                    answer = 'NO';
+                }
+                 
+                return answer;
+            }
+            
+            let str="found7, time: study; Yduts; emit, 7Dnuof";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
