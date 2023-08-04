@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, t){
+                //강의 후 코드 
+                let p = 1000;
+                let answer = [];
+                for (let i = 0; i < s.length; i++) {
+                    if (s[i] === t) {
+                        p = 0;
+                        answer.push(p);
+                    } else {
+                        p++;
+                        answer.push(p);
+                    }
+                }
+                p = 1000;
+                for (let i = s.length - 1; 0 <= i; i--) {
+                    if (s[i] === t) {
+                        p = 0;
+                    } else {
+                        p++;
+                        if (p < answer[i]) {
+                            answer[i] = p;
+                        }                     
+                    }
+                }
+
+                return answer;
+            }
+            
+            let str="teachermode";
+            console.log(solution(str, 'e'));
+        </script>
+    </body>
+</html>

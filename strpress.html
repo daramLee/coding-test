@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                // // //강의 전 코드: 왜 s.length - 1로 했는데 E가 출력이 안되는지 모르겠네
+                // let cnt = 1;
+                // let answer = [];
+                // for (let i = 0; i < s.length; i++) {
+                //     // if (cnt === 1) {
+                //     //     answer.push(s[i]);
+                //     // }
+
+                //     if (s[i] === s[i + 1]) {
+                //         cnt++;
+                //     } else {
+                //         if (cnt !== 1) {
+                //             answer.push(cnt);                            
+                //         }
+                //         cnt = 1;
+                //     }
+                // }
+
+                //강의 후 코드
+                let answer = '';
+                let cnt = 1;
+                s = s + ' ';
+                for (let i = 0; i < s.length - 1; i++) {
+                    if (s[i] === s[i + 1]) {
+                        cnt++;
+                    } else {
+                        answer += s[i]
+                        if(1 < cnt) {
+                            answer += cnt;
+                            cnt = 1;
+                        }             
+                    }
+                }
+
+                return answer;
+            }
+            
+            let str="KKHSSSSSSSE";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
