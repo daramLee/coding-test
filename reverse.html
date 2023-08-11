@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+
+            function isPrime(num){
+                //소수 판별 : 그 숫자 전까지 for문으로 돌리기
+                if (num === 1) {
+                    return false;
+                } 
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            function solution(arr){
+                // //강의 전 코드: reverse함수 이용
+                // let answer = [];
+                // for (x of arr) {
+                //     let reverse = x.toString().split('').reverse().join('');
+                //     reverse = Numbener(reverse);
+                //     if (isPrime(reverse)) {
+                //         answer.push(reverse);
+                //     }
+                // }
+                //강의 후 코드: 반복문으로 숫자 뒤집어보기
+                let answer = [];
+                for (x of arr) {
+                    let reverse = '';
+                    let temp1 = x;
+                    while (temp1 !== 0) {
+                        let temp2 = temp1 % 10;
+                        reverse += temp2;
+                        temp1 = Math.floor(temp1 / 10); 
+                    }
+                    reverse = Number(reverse);
+                    if (isPrime(reverse)) {
+                        answer.push(reverse);
+                    }
+                }
+                return answer;
+            }
+            
+            let arr=[32, 55, 62, 20, 250, 370, 200, 30, 100];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
