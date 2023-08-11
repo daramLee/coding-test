@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n, arr){
+                //강의 전 코드 : max일 때 인덱스 저장
+                // let max = Number.MIN_SAFE_INTEGER;
+                // let index = 0; //max일 때 인덱스
+                // for (let i = 0; i < n; i++) {
+                //     let sum = 0;
+                //     let temp = arr[i]; //temp = 128;
+                //     for (let j = 10; 10 <= temp; ) {
+                //         sum += temp % j; //8
+                //         temp = Math.floor(temp / j);
+                //     }
+                //     // console.log(sum);
+                //     if (max < sum) {
+                //         index = i;
+                //         max = sum;
+                //     } else if (max === sum) {
+                //         if (arr[index] < arr[i]) {
+                //             index = i;
+                //         }
+                //     }
+                // }
+                // let answer = arr[index];
+
+                //강의 후 코드1: answer = max로 하는 코드로 짜보기.
+                let max = Number.MIN_SAFE_INTEGER; //각 자릿수의 합
+                let answer = 0; //원래 숫자
+                for (x of arr) {
+                    let sum = 0; //각 자릿수 합
+                    let temp = x; //원래 숫자
+                    while (temp !== 0) {
+                        //자릿수로 분리
+                        let num = temp % 10;
+                        // console.log(num);
+                        //분리된 한자리 더하기
+                        sum += num;
+                        //갱신
+                        temp = Math.floor(temp / 10);
+                    } 
+                    if (max < sum) {
+                        max = sum;
+                        answer = x;
+                    } else if (max === sum) {
+                        if (answer < x) {
+                            answer = x;
+                        }
+                    }                  
+                }
+                // //강의 후 코드2: 내장함수 reduce, split 이용
+                // for (x of arr) {
+                //     //각 자릿수를 split으로 쪼개기
+                //     let num = x.toString().split('');
+                //     console.log(num);
+                //     //reduce로 각 자릿수를 합하기.
+                //     let sum = num.reduce((a, b) => a + Number(b), 0);
+                    
+                // }         
+
+                return answer;
+            }
+            
+            let arr=[128, 460, 603, 40, 521, 137, 123];
+            console.log(solution(7, arr));
+        </script>
+    </body>
+</html>
+
